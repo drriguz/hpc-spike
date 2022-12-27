@@ -1,0 +1,97 @@
+\documentclass{scrartcl}
+\usepackage[depth=subsubsection]{bookmark}
+\usepackage{titling}
+\usepackage{amsmath}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\usepackage[centering,paperwidth=180mm,paperheight=230mm,%
+body={390pt,530pt}]{geometry}
+
+\usepackage{fontspec}
+
+\usepackage{tabularx, booktabs, makecell}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{xeCJK}
+\setCJKmainfont{Source Han Serif SC}
+\setCJKsansfont{Source Han Sans SC}
+\setCJKmonofont{Hack FC Ligatured}
+
+\setmainfont{Times New Roman}
+\setsansfont{Source Han Sans SC}
+\setmonofont{Consolas}
+
+\usepackage{parskip}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{graphicx} 
+\graphicspath{{images/}}
+\usepackage{transparent}
+\usepackage[usetransparent]{svg}
+\usepackage{cleveref}
+\usepackage{pifont}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true
+}
+\usepackage{soul}
+\usepackage[block=ragged]{biblatex}
+
+\addbibresource{ref.bib}
+
+\usepackage{listings}
+\usepackage[outputdir=./build/,newfloat]{minted}
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\setminted{
+   breaklines,
+   linenos,
+   frame=lines,
+   rulecolor=gray,
+   framerule=0.5pt
+}
+\usemintedstyle{colorful}
+
+\title{A Study of HPC}
+\author{李海峰}
+
+\begin{document}
+
+
+\begin{titlingpage}
+\maketitle
+\begin{abstract}
+    本文旨在对HPC的原理、应用、技术框架、发展趋势等进行一个基础的了解，
+    以便掌握HPC基本的背景知识并为HPC在我司的应用提供参考。
+    
+\end{abstract}
+\end{titlingpage}
+\tableofcontents
+
+\section{HPC简介}
+\subimport{}{introduction}
+
+\section{传统HPC理论和应用基础}
+\subimport{}{basics}
+
+\section{传统HPC与AI、Big Data的融合}
+\subimport{}{hpda}
+
+\section{社区及开源框架}
+\subimport{}{ecosystem}
+
+\section{总结}
+\subimport{}{summary}
+
+\clearpage
+\printbibliography 
+\end{document}
